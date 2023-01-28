@@ -9,15 +9,15 @@ class Solution {
     }
     public int minDiffInBST(TreeNode root) {
         List<Integer>arr=new LinkedList<>();
-        int max=Integer.MAX_VALUE;
+        int min=Integer.MAX_VALUE;
         if(root==null)
             return 0;
         inOrder(root,arr);
         for(int i=0;i<arr.size()-1;i++)
         {
             int m=arr.get(i+1)-arr.get(i);
-            max=Math.min(m,max);
+            min=Math.min(m,min);
         }
-        return max;
+        return min;
     }
 }
